@@ -1,549 +1,513 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="el" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Τίτλος Σελίδας - Περιλαμβάνει: Κοκκινομηλιά, Βόρεια Εύβοια, Παραδοσιακό, Ορεινό -->
+
     <title>Κοκκινομηλιά Βόρειας Εύβοιας - Παραδοσιακό Ορεινό Χωριό</title>
-    
-    <!-- Περιγραφή Σελίδας - Περιλαμβάνει: όμορφα χωριά, παραδοσιακά ορεινά χωριά, Βόρεια Εύβοια -->
     <meta name="description" content="Κοκκινομηλιά Βόρειας Εύβοιας: Ένα από τα πιο όμορφα, παραδοσιακά ορεινά χωριά. Ανακαλύψτε την ιστορία του, το Περιβαλλοντικό Κέντρο, τα ιστορικά εξωκλήσια, το μεγάλο πανηγύρι, την εντυπωσιακή τοιχογραφία και τις μαγευτικές παραλίες.">
-    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Fraunces', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        forest: {
+                            50: '#f2f7f2',
+                            100: '#e0ece0',
+                            200: '#c2d9c3',
+                            300: '#96bd98',
+                            400: '#659a68',
+                            500: '#437c47',
+                            600: '#326236',
+                            700: '#294e2d',
+                            800: '#233f26',
+                            900: '#1d3420',
+                        },
+                        sand: '#f7f5ef',
+                        clay: '#c97b3c',
+                    },
+                },
+            },
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7f4;
-            color: #333;
-            line-height: 1.8;
-        }
-        .flags-bar {
-            background-color: #1b5e20;
-            text-align: center;
-            padding: 10px 20px;
-        }
-        .flags-bar a {
-            font-size: 1.8rem;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: transform 0.2s;
-            display: inline-block;
-        }
-        .flags-bar a:hover {
-            transform: scale(1.2);
-        }
-        
-        header {
-            background-image: url('header-bg.jpg');
+        html { -webkit-font-smoothing: antialiased; }
+        .hero-overlay {
+            background:
+                linear-gradient(to top, rgba(29,52,32,0.92) 0%, rgba(29,52,32,0.35) 45%, rgba(29,52,32,0.55) 100%),
+                url('header-bg.jpg');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            text-align: center;
-            padding: 5rem 1rem;
-            position: relative;
         }
-        
-        header h1, header p {
-            position: relative;
-            z-index: 2;
-            background-color: rgba(0, 0, 0, 0.4);
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 8px;
+        .fade-edge::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.35), transparent 55%);
+            pointer-events: none;
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin-bottom: 15px;
-        }
-        header p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto;
-            font-weight: normal;
-        }
-        
-        nav {
-            background-color: #2e7d32;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        nav a {
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
-        }
-        nav a:hover {
-            background-color: #4caf50;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .section {
-            background: white;
-            padding: 35px;
-            margin-bottom: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-        .section h2 {
-            color: #2e7d32;
-            border-bottom: 3px solid #4caf50;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        .section h3 {
-            color: #1b5e20;
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-        .section h4 {
-            color: #2e7d32;
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-        .gallery {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-        .gallery img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            flex: 1 1 300px;
-            background-color: #e8ece8;
-        }
-        .recipe-box {
-            background-color: #fff9e6;
-            border-left: 5px solid #ffb300;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 0 8px 8px 0;
-        }
-        .recipe-box h4 {
-            margin-top: 0;
-            color: #ff8f00;
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-        }
-        .recipe-meta {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        .recipe-box ul {
-            margin-top: 5px;
-            margin-bottom: 15px;
-            margin-left: 20px;
-        }
-        .recipe-box ol {
-            margin-top: 5px;
-            margin-bottom: 15px;
-            margin-left: 20px;
-        }
-        .tip-box {
-            background-color: #e3f2fd;
-            border-left: 5px solid #2196f3;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        .contact-grid {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .contact-card {
-            background: #f1f8e9;
-            border-left: 5px solid #4caf50;
-            padding: 20px;
-            flex: 1 1 300px;
-            border-radius: 8px;
-        }
-        .contact-card h3 {
-            margin-top: 0;
-            color: #2e7d32;
-            margin-bottom: 10px;
-        }
-        .contact-card a {
-            color: #2e7d32;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 450px;
-            border: 0;
-            border-radius: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #1b5e20;
-            color: white;
-            margin-top: 50px;
-        }
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 25px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-        .info-table th {
-            background-color: #2e7d32;
-            color: white;
-            text-align: left;
-            padding: 15px;
-            font-weight: bold;
-        }
-        .info-table td {
-            background-color: #fff;
-            color: #333;
-            padding: 12px 15px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .info-table tr:last-child td {
-            border-bottom: none;
-        }
-        .info-table tr:nth-child(even) td {
-            background-color: #f9faf9;
-        }
+        ::selection { background: #96bd98; color: #1d3420; }
     </style>
 </head>
-<body>
+<body class="bg-sand font-sans text-forest-900 antialiased">
 
-    <!-- Μπάρα με Σημαίες (Γλώσσες) -->
-    <div class="flags-bar">
-        <a href="https://translate.google.com/translate?sl=el&tl=en&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="English">🇬🇧</a>
-        <a href="https://translate.google.com/translate?sl=el&tl=fr&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="Français">🇫🇷</a>
-        <a href="https://translate.google.com/translate?sl=el&tl=it&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="Italiano">🇮🇹</a>
-        <a href="https://translate.google.com/translate?sl=el&tl=es&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="Español">🇪🇸</a>
-        <a href="https://translate.google.com/translate?sl=el&tl=ru&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="Русский">🇷🇺</a>
+    <!-- Language bar -->
+    <div class="bg-forest-900 text-forest-100">
+        <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-2.5">
+            <span class="hidden text-xs font-medium uppercase tracking-[0.2em] text-forest-300 sm:block">Ορεινή Βόρεια Εύβοια</span>
+            <div class="flex items-center gap-1 text-lg">
+                <a href="https://translate.google.com/translate?sl=el&tl=en&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="English" class="rounded-md px-1.5 py-1 transition-transform hover:scale-125">🇬🇧</a>
+                <a href="https://translate.google.com/translate?sl=el&tl=fr&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="Français" class="rounded-md px-1.5 py-1 transition-transform hover:scale-125">🇫🇷</a>
+                <a href="https://translate.google.com/translate?sl=el&tl=it&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="Italiano" class="rounded-md px-1.5 py-1 transition-transform hover:scale-125">🇮🇹</a>
+                <a href="https://translate.google.com/translate?sl=el&tl=es&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="Español" class="rounded-md px-1.5 py-1 transition-transform hover:scale-125">🇪🇸</a>
+                <a href="https://translate.google.com/translate?sl=el&tl=ru&u=https://dfstate2014-dot.github.io/kokinomilia/" target="_blank" title="Русский" class="rounded-md px-1.5 py-1 transition-transform hover:scale-125">🇷🇺</a>
+            </div>
+        </div>
     </div>
 
-    <header>
-        <h1>Κοκκινομηλιά Βόρειας Εύβοιας</h1>
-        <p>Το Ορεινό Μπαλκόνι, η Ιστορία των Αιώνων και το Θαύμα της Αναγεννημένης Φύσης</p>
+    <!-- Hero -->
+    <header class="hero-overlay relative">
+        <div class="mx-auto flex min-h-[78vh] max-w-5xl flex-col items-center justify-center px-6 py-24 text-center text-white">
+            <span class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur-sm">
+                Υψόμετρο 560μ · Όρος Ξηρόν
+            </span>
+            <h1 class="font-serif text-5xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl md:text-7xl">
+                Κοκκινομηλιά<br class="hidden sm:block"> Βόρειας Εύβοιας
+            </h1>
+            <p class="mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/85 text-pretty sm:text-xl">
+                Το Ορεινό Μπαλκόνι, η Ιστορία των Αιώνων και το Θαύμα της Αναγεννημένης Φύσης
+            </p>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <a href="#about" class="rounded-full bg-white px-7 py-3 text-sm font-semibold text-forest-800 shadow-lg shadow-black/20 transition hover:bg-forest-50">Ανακαλύψτε το χωριό</a>
+                <a href="#contact" class="rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Επικοινωνία</a>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
     </header>
 
-    <nav>
-        <a href="#about">Το Χωριό</a>
-        <a href="#history">Ιστορία</a>
-        <a href="#recovery">Αναγέννηση</a>
-        <a href="#chapels">Εξωκλήσια</a>
-        <a href="#sights">Αξιοθέατα</a>
-        <a href="#beaches">Παραλίες</a>
-        <a href="#recipes">Συνταγές</a>
-        <a href="#contact">Επικοινωνία</a>
+    <!-- Sticky nav -->
+    <nav class="sticky top-0 z-50 border-b border-forest-100 bg-sand/90 backdrop-blur-md">
+        <div class="mx-auto flex max-w-6xl items-center gap-1 overflow-x-auto px-4 py-2.5 text-sm font-medium [scrollbar-width:none]">
+            <a href="#about" class="whitespace-nowrap rounded-full px-4 py-2 text-forest-700 transition hover:bg-forest-100 hover:text-forest-900">Το Χωριό</a>
+            <a href="#history" class="whitespace-nowrap rounded-full px-4 py-2 text-forest-700 transition hover:bg-forest-100 hover:text-forest-900">Ιστορία</a>
+            <a href="#recovery" class="whitespace-nowrap rounded-full px-4 py-2 text-forest-700 transition hover:bg-forest-100 hover:text-forest-900">Αναγέννηση</a>
+            <a href="#chapels" class="whitespace-nowrap rounded-full px-4 py-2 text-forest-700 transition hover:bg-forest-100 hover:text-forest-900">Εξωκλήσια</a>
+            <a href="#sights" class="whitespace-nowrap rounded-full px-4 py-2 text-forest-700 transition hover:bg-forest-100 hover:text-forest-900">Αξιοθέατα</a>
+            <a href="#beaches" class="whitespace-nowrap rounded-full px-4 py-2 text-forest-700 transition hover:bg-forest-100 hover:text-forest-900">Παραλίες</a>
+            <a href="#recipes" class="whitespace-nowrap rounded-full px-4 py-2 text-forest-700 transition hover:bg-forest-100 hover:text-forest-900">Συνταγές</a>
+            <a href="#contact" class="whitespace-nowrap rounded-full px-4 py-2 text-forest-700 transition hover:bg-forest-100 hover:text-forest-900">Επικοινωνία</a>
+        </div>
     </nav>
 
-    <div class="container">
-        
-        <!-- ΕΙΣΑΓΩΓΗ & ΤΟ ΧΩΡΙΟ -->
-        <div id="about" class="section">
-            <h2>Το Χωριό μας</h2>
-            <p>Η Κοκκινομηλιά είναι ένας από τους πιο αυθεντικούς, ορεινούς θησαυρούς της Βόρειας Εύβοιας. Χτισμένη σε υψόμετρο περίπου 560 μέτρων στις πλαγιές του όρους Ξηρόν, αποτελεί ένα πραγματικό «μπαλκόνι» που συνδυάζει την άγρια ορεινή ομορφιά με την άμεση και ταχύτατη πρόσβαση σε μερικές από τις ωραιότερες ακτές του νησιού. Είναι ένας τόπος που δοκιμάστηκε σκληρά από τις αντιξοότητες, αλλά σήμερα στέκεται όρθιος, αποτελώντας ένα ολοζώντανο παράδειγμα φυσικής, πολιτιστικής και κοινωνικής ανθεκτικότητας.</p>
+    <main class="mx-auto max-w-6xl space-y-20 px-6 py-16 md:space-y-28 md:py-24">
 
-            <div class="gallery">
-                <img src="xorio1.jpg" alt="Εικόνα Χωριού 1">
-                <img src="xorio2.jpg" alt="Εικόνα Χωριού 2">
-                <img src="xorio3.jpg" alt="Εικόνα Χωριού 3">
-                <img src="xorio4.jpg" alt="Εικόνα Χωριού 4">
-                <img src="xorio5.jpeg" alt="Εικόνα Χωριού 5">
-                <img src="xorio6.jpg" alt="Εικόνα Χωριού 6">
-                <img src="xorio7.jpg" alt="Εικόνα Χωριού 7">
-                <img src="xorio8.jpg" alt="Εικόνα Χωριού 8">
-                
-                <!-- Διορθώθηκε: Οι φωτογραφίες της τοιχογραφίας πάνε συνεχόμενα -->
-                <img src="xorio9.jpg" alt="Τοιχογραφία Πλατείας - Μέρος 1">
-                <img src="xorio10.jpg" alt="Τοιχογραφία Πλατείας - Μέρος 2">
-                <img src="xorio11.jpg" alt="Τοιχογραφία Πλατείας - Μέρος 3">
-                
-                <img src="xorio12.jpeg" alt="Εικόνα Χωριού 12">
+        <!-- ABOUT -->
+        <section id="about" class="scroll-mt-24">
+            <div class="max-w-3xl">
+                <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-500">Καλωσορίσατε</p>
+                <h2 class="font-serif text-4xl font-semibold tracking-tight text-forest-800 text-balance md:text-5xl">Το Χωριό μας</h2>
+            </div>
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-forest-700">Η Κοκκινομηλιά είναι ένας από τους πιο αυθεντικούς, ορεινούς θησαυρούς της Βόρειας Εύβοιας. Χτισμένη σε υψόμετρο περίπου 560 μέτρων στις πλαγιές του όρους Ξηρόν, αποτελεί ένα πραγματικό «μπαλκόνι» που συνδυάζει την άγρια ορεινή ομορφιά με την άμεση και ταχύτατη πρόσβαση σε μερικές από τις ωραιότερες ακτές του νησιού. Είναι ένας τόπος που δοκιμάστηκε σκληρά από τις αντιξοότητες, αλλά σήμερα στέκεται όρθιος, αποτελώντας ένα ολοζώντανο παράδειγμα φυσικής, πολιτιστικής και κοινωνικής ανθεκτικότητας.</p>
+
+            <div class="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+                <img src="xorio1.jpg" alt="Εικόνα Χωριού 1" class="fade-edge relative aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio2.jpg" alt="Εικόνα Χωριού 2" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio3.jpg" alt="Εικόνα Χωριού 3" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio4.jpg" alt="Εικόνα Χωριού 4" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio5.jpeg" alt="Εικόνα Χωριού 5" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio6.jpg" alt="Εικόνα Χωριού 6" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio7.jpg" alt="Εικόνα Χωριού 7" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio8.jpg" alt="Εικόνα Χωριού 8" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio9.jpg" alt="Τοιχογραφία Πλατείας - Μέρος 1" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio10.jpg" alt="Τοιχογραφία Πλατείας - Μέρος 2" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio11.jpg" alt="Τοιχογραφία Πλατείας - Μέρος 3" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="xorio12.jpeg" alt="Εικόνα Χωριού 12" class="aspect-[4/5] w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
             </div>
 
-            <h3>Γιατί η Κοκκινομηλιά είναι ένα Εξαιρετικό Χωριό;</h3>
-            <p>Υπάρχουν συγκεκριμένοι λόγοι που καθιστούν αυτό το χωριό έναν μοναδικό τόπο για να ζει κανείς ή να τον επισκεφθεί:</p>
-            <ul>
-                <li><strong>Μικροκλίμα και Καθαρός Αέρας:</strong> Λόγω του υψομέτρου, το καλοκαίρι, όταν στις παραθαλάσσιες περιοχές επικρατεί καύσωνας, στην Κοκκινομηλιά απολαμβάνει κανείς μια μοναδική δροσιά (το βράδυ η ζακέτα είναι απαραίτητη). Ο αέρας είναι πεντακάθαρος και γεμάτος οξυγόνο.</li>
-                <li><strong>Η Καλλιτεχνική Πλατεία:</strong> Η καρδιά του χωριού, η κεντρική του πλατεία, προσφέρει μια μοναδική αίσθηση ηρεμίας. Εκεί δεν θα βρείτε τα κλασικά πλατάνια, αλλά ένα σπουδαίο σύγχρονο αξιοθέατο: μια εντυπωσιακή, μεγάλης έκτασης ζωγραφική (τοιχογραφία) που φιλοτεχνήθηκε από γνωστή ζωγράφο, μεταμορφώνοντας τον χώρο σε ένα ανοιχτό πνευματικό και καλλιτεχνικό κέντρο.</li>
-                <li><strong>Αγνά Προϊόντα & Γαστρονομία:</strong> Η Κοκκινομηλιά είναι το ιδανικό σημείο για να προμηθευτεί κανείς απευθείας από τους ντόπιους παραγωγούς εξαιρετικό ντόπιο τυρί, αγνό μέλι και παραδοσιακό τσίπουρο. Όσο για το φαγητό, τόσο στο ίδιο το χωριό (όπου μπορεί κανείς να φάει πολύ καλά) όσο και στους γύρω οικισμούς, υπάρχουν εξαιρετικές οικογενειακές ταβέρνες με νόστιμα, σπιτικά εδέσματα και εκλεκτά ντόπια κρέατα.</li>
-                <li><strong>Στρατηγικό Ορμητήριο-Αστραπή:</strong> Λειτουργεί ως ο απόλυτος «συνδετικός κρίκος» ανάμεσα στο βουνό και τη θάλασσα. Οι αποστάσεις προς τα μεγάλα παραθαλάσσια κέντρα και τις ακτές είναι εξαιρετικά σύντομες, καθιστώντας τις καθημερινές εξορμήσεις εύκολες και ξεκούραστες.</li>
-            </ul>
-        </div>
+            <h3 class="mt-14 font-serif text-2xl font-semibold text-forest-800 md:text-3xl">Γιατί η Κοκκινομηλιά είναι ένα Εξαιρετικό Χωριό;</h3>
+            <p class="mt-3 max-w-3xl text-lg leading-relaxed text-forest-700">Υπάρχουν συγκεκριμένοι λόγοι που καθιστούν αυτό το χωριό έναν μοναδικό τόπο για να ζει κανείς ή να τον επισκεφθεί:</p>
 
-        <!-- ΙΣΤΟΡΙΑ -->
-        <div id="history" class="section">
-            <h2>Η Ιστορική Διαδρομή: Από την Προϊστορία μέχρι Σήμερα</h2>
-            
-            <h3>Προϊστορία και Αρχαιότητα</h3>
-            <p>Η ευρύτερη περιοχή της Βόρειας Εύβοιας (η αρχαία Ιστιαιώτιδα και Ελλοπία) κατοικείται αδιάλειπτα από την Παλαιολιθική και Νεολιθική εποχή. Η γεωγραφική θέση της Κοκκινομηλιάς, κρυμμένη μέσα σε βουνά, την καθιστούσε ιδανικό καταφύγιο αλλά και παρατηρητήριο από την αρχαιότητα. Κατά τους κλασικούς και ελληνιστικούς χρόνους, η περιοχή βρισκόταν υπό την επιρροή της ισχυρής Ιστιαίας. Οι κάτοικοι των ορεινών αυτών όγκων ασχολούνταν κυρίως με την κτηνοτροφία, την υλοτομία και την παραγωγή πίσσας, η οποία ήταν απαραίτητη για τη στεγανοποίηση των πλοίων των αρχαίων Ελλήνων.</p>
-
-            <h3>Βυζάντιο και Τουρκοκρατία</h3>
-            <p>Κατά τη βυζαντινή περίοδο και αργότερα, με την έλευση των Φράγκων και των Οθωμανών, ο οικισμός άρχισε να διαμορφώνεται πιο συγκροτημένα. Το όνομα Κοκκινομηλιά κρύβει πίσω του γοητευτικούς θρύλους:</p>
-            <ul>
-                <li>Η επικρατέστερη λαϊκή παράδοση αναφέρει ότι στην περιοχή υπήρχε μια τεράστια, άγρια μηλιά που έβγαζε κατακόκκινα μήλα, η οποία αποτελούσε σημείο αναφοράς για τους ταξιδιώτες.</li>
-                <li>Μια άλλη, πιο αιματηρή εκδοχή, συνδέει το όνομα με τις σφοδρές μάχες κατά την Τουρκοκρατία, όπου το χώμα «έβαψε κόκκινο» κοντά σε μια μηλιά.</li>
-            </ul>
-            <p>Στα χρόνια της Οθωμανικής κυριαρχίας, η Κοκκινομηλιά εξελίχθηκε σε ένα ισχυρό «κεφαλοχώρι» των βουνών. Λόγω του δύσβατου εδάφους, οι Τούρκοι δεν είχαν μόνιμη παρουσία μέσα στο χωριό, επιτρέποντας στους κατοίκους να διατηρούν μια σχετική αυτονομία. Το χωριό έγινε κρησφύγετο κλεφτών και αρματολών, ενώ οι Κοκκινομηλιώτες συμμετείχαν ενεργά στην Επανάσταση του 1821 υπό την ηγεσία τοπικών οπλαρχηγών.</p>
-
-            <h3>20ος Αιώνας: Κατοχή, Εμφύλιος και η Εποχή του Ρετσινιού</h3>
-            <p>Ο 20ος αιώνας έφερε μεγάλες προκλήσεις. Κατά τη διάρκεια της Γερμανικής Κατοχής, τα πυκνά δάση της Κοκκινομηλιάς αποτέλεσαν ορμητήριο των ανταρτών του ΕΛΑΣ. Οι κάτοικοι πλήρωσαν βαρύ φόρο αίματος για τη βοήθεια και τη φιλοξενία που προσέφεραν στην Αντίσταση.</p>
-            <p>Μεταπολεμικά, το χωριό γνώρισε μια περίοδο σημαντικής οικονομικής ακμής βασισμένη σε ένα μοναδικό προϊόν: το ρετσίνι. Η Κοκκινομηλιά αναδείχθηκε σε ένα από τα μεγαλύτερα «ρετσινοχώρια» της Ελλάδας. Οι άνδρες του χωριού, οι ξακουστοί ρετσινοχώρες, δούλευαν σκληρά στα δάση, τροφοδοτώντας την ελληνική βιομηχανία και κρατώντας την τοπική οικονομία ζωντανή.</p>
-        </div>
-
-        <!-- ΑΝΑΓΕΝΝΗΣΗ & ΧΛΩΡΙΔΑ -->
-        <div id="recovery" class="section">
-            <h2>Η Μεγάλη Δοκιμασία του 2021 και τα Ση points Αναγεννήσεως</h2>
-            <p>Τον Αύγουστο του 2021, η Βόρεια Εύβοια έζησε μία από τις μεγαλύτερες περιβαντολλογικές καταστροφές στη σύγχρονη ιστορία της Ελλάδας. Η Κοκκινομηλιά βρέθηκε στο επίκεντρο της πύρινης λαίλαπας. Η φωτιά προκάλεσε σοβαρές ζημιές στις υποδομές, κατέστρεψε σπίτια και ισοπέδωσε το δάσος γύρω από το χωριό.</p>
-            <p>Ωστόσο, τρία μεγάλα γεγονότα επιστημονικής, κοινωνικής και οικονομικής φύσεως σηματοδοτούν σήμερα την απόλυτη αναγέννηση του οικισμού:</p>
-            <ul>
-                <li><strong>Η Ανοικοδόμηση του Ιερού Ναού του Ταξιάρχη:</strong> Κατά τη διάρκεια της φωτιάς, η μεγάλη και κεντρική εκκλησία του χωριού, ο Ταξιάρχης, κάηκε ολοσχερώς, προκαλώντας βαθιά θλίψη. Σήμερα, όμως, αποτελεί ένα σπουδαίο σύμβολο ελπίδας: μετά από την ευγενή και γενναιόδωρη προσφορά ενός μεγάλου και παγκοσμίως γνωστού Έλληνα εφοπλιστή, ο ναός ξαναχτίζεται και επισκευάζεται από την αρχή με δικά του έξοδα.</li>
-                <li><strong>Το Νέο Περιβαλλοντικό Κέντρο Βόρειας Εύβοιας (Παλιό Σχολείο):</strong> Το παλιό, ιστορικό σχολείο του χωριού επισκευάστηκε ριζικά και ανακατασκευάστηκε πλήρως με τη χορηγία της Elpedison, μεταμορφούμενο σε ένα κτίριο υπερσύγχρονο και λειτουργικό. Με τα εγκαίνια να είναι προγραμματισμένα για τον Σεπτέμβριο του 2026, το κτίριο αυτό θα λειτουργήσει ως το επίσημο Περιβαλλοντικό Κέντρο Βόρειας Εύβοιας, αποτελώντας το κέντρο ερευνών, ενημέρωσης και φιλοξενίας για πανεπιστήμια από όλο τον κόσμο.</li>
-                <li><strong>Το «Θαύμα» της Φύσης:</strong> Το τοπικό οικοσύστημα αναγεννάται με ρυθμούς που εκπλήσσουν ακόμη και τους πιο έμπειρους παρατηρητές.</li>
-            </ul>
-
-            <h3>Ένα Ζωντανό Υπαίθριο Εργαστήριο: Η Μάχη της Χλωρίδας</h3>
-            <p>Το δάσος της Κοκκινομηλιάς αποτελούσε μια μεταβατική ζώνη (οικότονο), όπου η μεσογειακή βλάστηση συναντούσε το ορεινό τοπίο. Αυτό το σπάνιο μωσαϊκό χλωρίδας αναγεννάται σήμερα με διαφορετικούς, συναρπαστικούς μηχανισμούς, μετατρέποντας την περιοχή σε ιδανικό πεδίο μελέτης για φοιτητές, δασολόγους και περιβαλλοντολόγους:</p>
-            <ul>
-                <li><strong>Η Χαλέπιος Πεύκη:</strong> Διαθέτει πυροανθεκτικούς κώνους (κουκουνάρια) που άνοιξαν με τη θερμότητα της φωτιάς, γεμίζοντας τις πλαγιές με εκατομμύρια νέα μικρά πευκάκια.</li>
-                <li><strong>Η Μαύρη Πεύκη (Pinus nigra) και τα Έλατα:</strong> Αυτοί οι ορεινοί γίγαντες κάλυπταν τις πιο ψηλές ζώνες. Καθώς δεν αναγεννώνται εύκολα μετά από φωτιά, το γεγονός ότι ήδη αρχίζουν και ξεπροβάλλουν ξανά οι πρώτοι μικροί μαύροι πεύκοι και διάσπαρτα έλατα δείχνει ότι το μικροκλίμα και το έδαφος παραμένουν εξαιρετικά ισχυρά.</li>
-                <li><strong>Η Ορμητική Εμφάνιση της Δρυός (Βελανιδιάς):</strong> Το πιο εντυπωσιακό φαινόμενο είναι η βελανιδιά, η οποία φυτρώνει πλέον παντού, σχεδόν «ανεξέλεγκτα». Η δρυς χρησιμοποιεί το «μυστικό της όπλο»: την πρεμνοβλάστηση. Το βαθύ ριζικό της σύστημα έμεινε ζωντανό κάτω από το χώμα και πέταξε εύρωστα βλαστάρια με απίστευτη ταχύτητα.</li>
-            </ul>
-            <h4>Γιατί αυτό καθηλώνει την Επιστημονική Κοινότητα;</h4>
-            <p>Οι επιστήμονες μελετούν σε πραγματικό χρόνο τη «Μάχη της Σκίασης»: η δρυς μεγαλώνει γρήγορα, δημιουργεί φυσική σκιά, συγκρατεί την υγρασία και προστατεύει τα πιο ευαίσθητα σπορόφυτα της μαύρης πεύκης και του ελάτου από τον ήλιο. Παράλληλα, η εξάπλωση της βελανιδιάς δημιουργεί ένα πιο μικτό και φυσικά θωρακισμένο δάσος, καθώς τα πλατύφυλλα στερούνται ρετσινιού και είναι πολύ πιο ανθεκτικά σε μελλοντικές πυρκαγιές.</p>
-        </div>
-
-        <!-- ΕΞΩΚΛΗΣΙΑ -->
-        <div id="chapels" class="section">
-            <h2>Τα Ιστορικά Εξωκλήσια της Κοκκινομηλιάς: Φύση, Ιστορία και Ελπίδα στο Όρος Ξηρόν</h2>
-            <p>Στο ορεινότερο χωριό της Βόρειας Εύβοιας, την Κοκκινομηλιά (χτισμένη σε υψόμετρο 600 μέτρων στο όρος Ξηρόν), τα εξωκλήσια δεν είναι απλώς θρησκευτικοί χώροι. Είναι ζωντανά σημεία αναφοράς, μάρτυρες της ιστορίας του τόπου και σύμβολα της αναγέννησης της τοπικής κοινότητας.</p>
-            <p>Ανακαλύψτε τα τρία πιο σημαντικά εξωκλήσια της περιοχής, τις ιστορίες τους και τις διαδρομές που αξίζει να περπατήσετε.</p>
-
-            <h3>1. Προφήτης Ηλίας: Το Σύμβολο Αναγέννησης και Ελπίδας</h3>
-            <p>Χτισμένο σε ένα από τα πιο προνομιακά και γραφικά σημεία του χωριού, το ναΰδριο του Προφήτη Ηλία προσφέρει καθηλωτική πανοραμική θέα στο καταπράσινο —και σταδιακά αναγεννώμενο— τοπίο της Βόρειας Εύβοιας.</p>
-            
-            <h4>Η Σημασία της Ανακαίνισης</h4>
-            <p>Για την Κοκκινομηλιά, που επλήγη σκληρά από τις καταστροφικές πυρκαγιές του 2021, η πρόσφατη ανακαίνιση του Προφήτη Ηλία δεν ήταν μια απλή δομική συντήρηση. Αποτέλεσε έναν ισχυρό συμβολισμό ενότητας και επανεκκίνησης. Η αποκατάσταση έγινε πράξη με τη φροντίδα της Εκκλησίας, των τοπικών αρχών, αλλά κυρίως με την εθελοντική προσφορά και την αγάπη των κατοίκων και του Εκπολιτιστικού Συλλόγου.</p>
-            
-            <h4>Ο Εορτασμός στο Ξωκλήσι:</h4>
-            <ul>
-                <li><strong>Παραμονή (19 Ιουλίου):</strong> Μέγας Πανηγυρικός Εσπερινός με αρτοκλασία και παραδοσιακά κεράσματα στο ξωκλήσι.</li>
-                <li><strong>Ανήμερα (20 Ιουλίου):</strong> Πανηγυρική Θεία Λειτουργία.</li>
-            </ul>
-
-            <div class="gallery">
-                <img src="prilias.jpg" alt="Εξωκλήσι Προφήτης Ηλίας">
-            </div>
-
-            <h3>Το Μεγάλο Πανηγύρι στην Πλατεία (20 Ιουλίου)</h3>
-            <p>Το πανηγύρι του Προφήτη Ηλία είναι η μεγαλύτερη γιορτή του χρόνου για την Κοκκινομηλιά. Μετά τις λειτουργίες στο ξωκλήσι, η γιορτή μεταφέρεται στην κεντρική πλατεία του χωριού για το καθιερωμένο «Αντάμωμα».</p>
-            <p>Πρόκειται για ένα αυθεντικό, παραδοσιακό δημοτικό πανηγύρι με ζωντανή μουσική, χορό μέχρι το πρωί και νόστιμες ντόπιες γεύσεις, που συγκεντρώνει πλήθος κόσμου από όλη την Εύβοια.</p>
-            
-            <!-- Διορθώθηκε: panigiri-fetos.jpg επέστρεψε εδώ -->
-            <div class="gallery">
-                <img src="panigiri1.jpg" alt="Πανηγύρι στην Πλατεία 1">
-                <img src="panigiri2.jpg" alt="Πανηγύρι στην Πλατεία 2">
-                <img src="panigiri-fetos.jpg" alt="Πανηγύρι στην Πλατεία 3">
-            </div>
-
-            <h3>2. Ιερός Ναός Αναλήψεως: Στο Ψηλότερο Μπαλκόνι του Όρους Ξηρού</h3>
-            <p>Σε ένα από τα πιο ορεινά και επιβλητικά σημεία γύρω από το χωριό, το εξωκλήσι της Αναλήψεως στέκεται περιτριγυρισμένο από τις δασωμένες πλαγιές του όρους Ξηρού.</p>
-            
-            <h4>Σταθμός για Πεζοπόρους & Φυσιολάτρες</h4>
-            <p>Η διαδρομή προς την Ανάληψη αποτελεί μία από τις ωραιότερες πεζοπορικές διαδρομές της περιοχής.</p>
-            <ul>
-                <li><strong>Ημερομηνία Εορτασμού:</strong> Κινητή εορτή (39 ημέρες μετά το Πάσχα, πάντα Πέμπτη).</li>
-                <li><strong>Το Έθιμο:</strong> Μετά τη Θεία Λειτουργία και την αρτοκλασία, οι πιστοί συγκεντρώνονται στο προαύλιο ή στην πλατεία για το καθιερωμένο τοπικό κέρασμα.</li>
-            </ul>
-            <div class="tip-box">
-                <strong>Extra Tip Πεζοπορίας:</strong> Επειδή η Ανάληψη πέφτει πάντα την Άνοιξη (Μάιο ή Ιούνιο), η επίσκεψη συνδυάζεται ιδανικά με την ανθισμένη φύση του βουνού και τις ήπιες θερμοκρασίες.
-            </div>
-
-            <div class="gallery">
-                <img src="analip.jpg" alt="Εξωκλήσι Ανάληψης">
-            </div>
-
-            <h3>3. Αγία Παρασκευή: Ο Ζωντανός Μάρτυρας του «Παλιοχωρίου»</h3>
-            <p>Το εξωκλήσι της Αγίας Παρασκευής φέρει στις πέτρες του τη βαθιά ιστορική μνήμη και τις ρίζες της Κοκκινομηλιάς.</p>
-            
-            <h4>Η Ιστορία του Αρχικού Οικισμού</h4>
-            <p>Σύμφωνα με την topική παράδοση, οι πρόγονοι των σημερινών κατοίκων ζούσαν διασκορπισμένοι σε μικρούς οικισμούς. Ο παλαιότερος από αυτούς βρισκόταν στη θέση «Παλιοχώρι», ακριβώς δίπλα στο σημείο όπου βρίσκεται σήμερα το εκκλησάκι.</p>
-            <p>Κατά την Τουρκοκρατία, ο τοπικός Αγάς υποχρέωσε τους κατοίκους από το Παλιοχώρι και τη Μακροφτυλιά να μετοικήσουν στη σημερινή θέση της Κοκκινομηλιάς για να ελέγχει πιο εύκολα τη φορολογία. Έτσι, η Αγία Παρασκευή παραμένει το ιστορικό ορόσημο της αρχικής εστίας του χωριού.</p>
-            <ul>
-                <li><strong>Εορτασμός:</strong> 26 Ιουλίου (Αγίας Οσιομάρτυρος Παρασκευής).</li>
-                <li><strong>Τοπίο:</strong> Φωλιασμένο μέσα στην ορεινή φύση, προσφέρει απόλυτη ηρεμία και είναι προσβάσιμο μέσω μιας πανέμορφης σύντομης πεζοπορικής διαδρομής.</li>
-            </ul>
-
-            <div class="gallery">
-                <img src="agpar.jpg" alt="Εξωκλήσι Αγίας Παρασκευής">
-            </div>
-
-            <h3>Χρήσιμες Πληροφορίες για τον Επισκέπτη</h3>
-            <table class="info-table">
-                <thead>
-                    <tr>
-                        <th>Εξωκλήσι</th>
-                        <th>Υψόμετρο / Τοποθεσία</th>
-                        <th>Ημερομηνία Γιορτής</th>
-                        <th>Highlights</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Προφήτης Ηλίας</td>
-                        <td>Οικισμός Κοκκινομηλιάς</td>
-                        <td>20 Ιουλίου</td>
-                        <td>Πανοραμική θέα, Μεγάλο Πανηγύρι</td>
-                    </tr>
-                    <tr>
-                        <td>Ανάληψη</td>
-                        <td>Ψηλότερες πλαγιές όρους Ξηρού</td>
-                        <td>Κινητή (39 μέρες μετά το Πάσχα)</td>
-                        <td>Πεζοπορία, Ανοιξιάτικο τοπίο</td>
-                    </tr>
-                    <tr>
-                        <td>Agpar</td>
-                        <td>Θέση «Παλιοχώρι»</td>
-                        <td>26 Ιουλίου</td>
-                        <td>Ιστορικές ρίζες χωριού, Ήσυχο φυσικό περιβάλλον</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- ΑΞΙΟΘΕΑΤΑ -->
-        <div id="sights" class="section">
-            <h2>Αξιοθέατα στην Ευρύτερη Περιοχή</h2>
-            <p>Η Κοκκινομηλιά αποτελεί την ιδανική αφετηρία για να ανακαλύψετε τα σπουδαιότερα αξιοθέατα της Βόρειας Εύβοιας, από τα ορεινά μοναστήρια μέχρι τα "ελληνικά Σεϋχέλλες".</p>
-            
-            <h4>Το Απολιθωμένο Δάσος και το Μουσείο της Κερασιάς</h4>
-            <ul>
-                <li><strong>Το Απολιθωμένο Δάσος:</strong> Πριν από περίπου 10–20 εκατομμύρια χρόνια, η έντονη ηφαιστειακή δραστηριότητα κάλυψε το πλούσιο υποτροπικό δάσος της περιοχής με στάχτη, με αποτέλεσμα την τέλεια απολίθωση των κορμών.</li>
-                <li><strong>Μουσείο Απολιθωμένων Θηλαστικών Κερασιάς:</strong> Στεγάζει τα ευρήματα των τοπικών ανασκαφών. Εκεί ο επισκέπτης θα δει τους εντυπωσυακούς, προϊστορικούς προγόνους των ελεφάντων: Δεινοθήρια, μαχαιρόδοντες, χαλικοθήρια, προϊστορικούς ρινόκερους και χιπαριόν.</li>
-            </ul>
-
-            <h4>Οι Καταρράκτες του Δρυμώνα και η Μονή Οσίου Δαυίδ</h4>
-            <p>Οι καταρράκτες βρίσκονται σε υψόμετρο 620 μέτρων. Το νερό του ποταμού Σηπιά πέφτει από ύψος 15 μέτρων, δημιουργώντας μια κρυστάλλινη λίμνη περιβαλλόμενη από ένα δίκτυο διαμορφωμένων μονοπατιών με ξύλινα γεφυράκια. Πολύ κοντά βρίσκεται και η ιστορική Μονή του Οσίου Δαυίδ, ideal στάση για πνευματική ηρεμία.</p>
-
-            <div class="gallery">
-                <img src="lihadonisia.jpg" alt="Λιχαδονήσια">
-                <img src="oreoi.jpeg" alt="Ταύρος των Ωρεών">
-                <img src="aidipsos.jpg" alt="Λουτρά Αιδηψού">
-                <img src="kataraktes-drimona.jpg" alt="Καταρράκτες Δρυμώνα">
-                <img src="moniosioudavid.jpg" alt="Μονή Οσίου Δαυίδ">
-            </div>
-        </div>
-
-        <!-- ΠΑΡΑΛΙΕΣ -->
-        <div id="beaches" class="section">
-            <h2>Ο Απόλυτος Οδηγός Παραλιών: Από τον Ευβοϊκό στο Αιγαίο</h2>
-            <p>Η διαδρομή που ξεκινά από την Κοκκινομηλιά προσφέρει στον επισκέπτη το μοναδικό προνόμιο να επιλέξει ανάμεσα στην απόλυτη απανεμιά των κόλπων και την άγρια ομορφιά του ανοιχτού πελάγους.</p>
-
-            <div class="gallery">
-                <img src="agiokampos.jpeg" alt="Αγιόκαμπος">
-                <img src="psaropouli.jpeg" alt="Ψαροπούλι">
-                <img src="elinika-agios-nikolaos.jpg" alt="Ελληνικά Άγιος Νικόλαος">
-                <img src="tsokaiti.jpg" alt="Τσοκαΐτη">
-                <img src="rovies.jpg" alt="Ροβιές">
-                <img src="nisiotisa.jpeg" alt="Νησιώτισσα">
-            </div>
-        </div>
-
-        <!-- ΣΥΝΤΑΓΕΣ -->
-        <div id="recipes" class="section">
-            <h2>Συνταγές του Χωριού μας</h2>
-            <p>Στην Κοκκινομηλιά ξέρουμε καλά από δύο πράγματα: από πανέμορφα δασικά τοπία και από καλό, αυθεντικό φαγητό! Οι συνταγές του χωριού μας δεν θέλουν μεζούρες και γραμμάρια ακριβείας· θέλουν μεράκι, αγνά υλικά και αυτή την κλασική «γιαγιαδίστικη» σοφία.</p>
-            
-            <div class="recipe-box">
-                <h4>Μουσταλευριά: Το Παραδοσιακό "Energy Bowl" της Κοκκινομηλιάς</h4>
-                <p><strong>Τι θα χρειαστείτε:</strong> 4 ποτήρια μούστο, 1 ποτήρι αλεύρι, Κανέλα, Χοντροκομμένα καρύδια.<br>
-                <strong>Εκτέλεση:</strong> Διαλύουμε το αλεύρι στον μούστο. Βράζουμε ανακατεύοντας συνεχώς μέχρι να πήξει. Σερβίρουμε με μπόλικο καρύδι και κανέλα!</p>
-            </div>
-            <div class="gallery">
-                <img src="moust.jpg" alt="Μουσταλευριά">
-            </div>
-
-            <div class="recipe-box">
-                <h4>Αυγοτύρι: Ο Βασιλιάς του Μεζέ στο Καφενείο</h4>
-                <p>Έσκασαν μουσαφιραίοι ξαφνικά και δεν ξέρετε τι να τρατάρετε; Γρήγορο, πεντανόστιμο και ο απόλυτος συνοδός για τις συζητήσεις στην πλατεία.<br>
-                <strong>Τι θα χρειαστείτε:</strong> 1/2 κιλό τυρί φρέσκο τσαντίλας, 5 αυγά χωριάτικα, Λίγο αλάτι και πιπέρι.<br>
-                <strong>Εκτέλεση:</strong> Τηγανίζουμε ελαφρώς το αλευρωμένο τυρί. Χτυπάμε τα αυγά και τα περιχύνουμε στο τηγάνι. Τηγανίζουμε σαν ομελέτα. Σερβίρουμε με ντόπιο κρασάκι!</p>
-            </div>
-            <div class="gallery">
-                <img src="aug.jpg" alt="Αυγοτύρι">
-            </div>
-
-            <div class="recipe-box">
-                <h4>Ρεβύθια με Μανέστρα: Η Κυριακάτικη Θαλπωρή</h4>
-                <p>Ένα πιάτο γεμάτο θαλπωρή, ιδανικό για τις κρύες μέρες στην Κοκκινομηλιά.<br>
-                <strong>Τι θα χρειαστείτε:</strong> 500 gr ρεβύθια, 3 κρεμμύδια, 1 φλιτζάνι λάδι, 1 κ.σ. πελτέ, 150 gr κριθαράκι (μανέστρα), αλάτι & πιπέρι.<br>
-                <strong>Εκτέλεση:</strong> Μουλιάζουμε τα ρεβύθια αποβραδίς. Τα βράζουμε με το κρεμμύδι μέχρι να μαλακώσουν. Προσθέτουμε λάδι, πελτέ και μπαχαρικά. Στο τέλος ρίχνουμε το κριθαράκι και το αλάτι και φρεσκοτριμμένο πιπέρι. Αφήνουμε το κριθαράκι να «πιει» τα ζουμιά του.</p>
-            </div>
-        </div>
-
-        <!-- ΕΠΙΚΟΙΝΩΝΙΑ -->
-        <div id="contact" class="section">
-            <h2>Επικοινωνία</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>Πρόεδρος Κοινότητας</h3>
-                    <p><strong>Δημήτρης Δήμου</strong></p>
-                    <p>📞 6945165268</p>
+            <div class="mt-8 grid gap-5 md:grid-cols-2">
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Μικροκλίμα και Καθαρός Αέρας</h4>
+                    <p class="mt-3 leading-relaxed text-forest-700">Λόγω του υψομέτρου, το καλοκαίρι, όταν στις παραθαλάσσιες περιοχές επικρατεί καύσωνας, στην Κοκκινομηλιά απολαμβάνει κανείς μια μοναδική δροσιά (το βράδυ η ζακέτα είναι απαραίτητη). Ο αέρας είναι πεντακάθαρος και γεμάτος οξυγόνο.</p>
                 </div>
-                <div class="contact-card">
-                    <h3>Πρόεδρος Πολιτιστικού Συλλόγου</h3>
-                    <p><strong>Άγγελος Γερογιώργης</strong></p>
-                    <p>📞 6938213305</p>
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Η Καλλιτεχνική Πλατεία</h4>
+                    <p class="mt-3 leading-relaxed text-forest-700">Η καρδιά του χωριού, η κεντρική του πλατεία, προσφέρει μια μοναδική αίσθηση ηρεμίας. Εκεί δεν θα βρείτε τα κλασικά πλατάνια, αλλά ένα σπουδαίο σύγχρονο αξιοθέατο: μια εντυπωσιακή, μεγάλης έκτασης ζωγραφική (τοιχογραφία) που φιλοτεχνήθηκε από γνωστή ζωγράφο, μεταμορφώνοντας τον χώρο σε ένα ανοιχτό πνευματικό και καλλιτεχνικό κέντρο.</p>
                 </div>
-                <div class="contact-card">
-                    <h3>Social Media</h3>
-                    <p>🔵 <a href="[LINK_TO_YOUR_FACEBOOK_PAGE]" target="_blank">Facebook Σελίδα</a></p>
-                    <p>📸 <a href="[LINK_TO_YOUR_INSTAGRAM_PROFILE]" target="_blank">Instagram Προφίλ</a></p>
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Αγνά Προϊόντα &amp; Γαστρονομία</h4>
+                    <p class="mt-3 leading-relaxed text-forest-700">Η Κοκκινομηλιά είναι το ιδανικό σημείο για να προμηθευτεί κανείς απευθείας από τους ντόπιους παραγωγούς εξαιρετικό ντόπιο τυρί, αγνό μέλι και παραδοσιακό τσίπουρο. Όσο για το φαγητό, τόσο στο ίδιο το χωριό όσο και στους γύρω οικισμούς, υπάρχουν εξαιρετικές οικογενειακές ταβέρνες με νόστιμα, σπιτικά εδέσματα και εκλεκτά ντόπια κρέατα.</p>
+                </div>
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Στρατηγικό Ορμητήριο-Αστραπή</h4>
+                    <p class="mt-3 leading-relaxed text-forest-700">Λειτουργεί ως ο απόλυτος «συνδετικός κρίκος» ανάμεσα στο βουνό και τη θάλασσα. Οι αποστάσεις προς τα μεγάλα παραθαλάσσια κέντρα και τις ακτές είναι εξαιρετικά σύντομες, καθιστώντας τις καθημερινές εξορμήσεις εύκολες και ξεκούραστες.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- ΧΑΡΤΗΣ -->
-        <div id="location" class="section">
-            <h2>Πώς να έρθετε</h2>
-            <div class="map-container">
-                <iframe src="https://maps.google.com/maps?q=Κοκκινομηλιά,%20Εύβοια&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+        <!-- HISTORY -->
+        <section id="history" class="scroll-mt-24 rounded-3xl bg-forest-800 px-6 py-14 text-forest-50 md:px-14 md:py-16">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-300">Διαδρομή στον χρόνο</p>
+            <h2 class="font-serif text-4xl font-semibold tracking-tight text-balance md:text-5xl">Από την Προϊστορία μέχρι Σήμερα</h2>
+
+            <div class="mt-10 space-y-10 border-l border-forest-600 pl-6 md:pl-8">
+                <div class="relative">
+                    <span class="absolute -left-[31px] top-1.5 h-3.5 w-3.5 rounded-full bg-forest-300 ring-4 ring-forest-800 md:-left-[39px]"></span>
+                    <h3 class="font-serif text-2xl font-semibold text-white">Προϊστορία και Αρχαιότητα</h3>
+                    <p class="mt-3 leading-relaxed text-forest-100/90">Η ευρύτερη περιοχή της Βόρειας Εύβοιας (η αρχαία Ιστιαιώτιδα και Ελλοπία) κατοικείται αδιάλειπτα από την Παλαιολιθική και Νεολιθική εποχή. Η γεωγραφική θέση της Κοκκινομηλιάς, κρυμμένη μέσα σε βουνά, την καθιστούσε ιδανικό καταφύγιο αλλά και παρατηρητήριο από την αρχαιότητα. Κατά τους κλασικούς και ελληνιστικούς χρόνους, η περιοχή βρισκόταν υπό την επιρροή της ισχυρής Ιστιαίας. Οι κάτοικοι των ορεινών αυτών όγκων ασχολούνταν κυρίως με την κτηνοτροφία, την υλοτομία και την παραγωγή πίσσας, η οποία ήταν απαραίτητη για τη στεγανοποίηση των πλοίων των αρχαίων Ελλήνων.</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[31px] top-1.5 h-3.5 w-3.5 rounded-full bg-forest-300 ring-4 ring-forest-800 md:-left-[39px]"></span>
+                    <h3 class="font-serif text-2xl font-semibold text-white">Βυζάντιο και Τουρκοκρατία</h3>
+                    <p class="mt-3 leading-relaxed text-forest-100/90">Κατά τη βυζαντινή περίοδο και αργότερα, με την έλευση των Φράγκων και των Οθωμανών, ο οικισμός άρχισε να διαμορφώνεται πιο συγκροτημένα. Το όνομα Κοκκινομηλιά κρύβει πίσω του γοητευτικούς θρύλους:</p>
+                    <ul class="mt-4 space-y-2 text-forest-100/90">
+                        <li class="flex gap-3"><span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-300"></span><span>Η επικρατέστερη λαϊκή παράδοση αναφέρει ότι στην περιοχή υπήρχε μια τεράστια, άγρια μηλιά που έβγαζε κατακόκκινα μήλα, η οποία αποτελούσε σημείο αναφοράς για τους ταξιδιώτες.</span></li>
+                        <li class="flex gap-3"><span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-300"></span><span>Μια άλλη, πιο αιματηρή εκδοχή, συνδέει το όνομα με τις σφοδρές μάχες κατά την Τουρκοκρατία, όπου το χώμα «έβαψε κόκκινο» κοντά σε μια μηλιά.</span></li>
+                    </ul>
+                    <p class="mt-4 leading-relaxed text-forest-100/90">Στα χρόνια της Οθωμανικής κυριαρχίας, η Κοκκινομηλιά εξελίχθηκε σε ένα ισχυρό «κεφαλοχώρι» των βουνών. Λόγω του δύσβατου εδάφους, οι Τούρκοι δεν είχαν μόνιμη παρουσία μέσα στο χωριό, επιτρέποντας στους κατοίκους να διατηρούν μια σχετική αυτονομία. Το χωριό έγινε κρησφύγετο κλεφτών και αρματολών, ενώ οι Κοκκινομηλιώτες συμμετείχαν ενεργά στην Επανάσταση του 1821 υπό την ηγεσία τοπικών οπλαρχηγών.</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[31px] top-1.5 h-3.5 w-3.5 rounded-full bg-forest-300 ring-4 ring-forest-800 md:-left-[39px]"></span>
+                    <h3 class="font-serif text-2xl font-semibold text-white">20ος Αιώνας: Κατοχή, Εμφύλιος και η Εποχή του Ρετσινιού</h3>
+                    <p class="mt-3 leading-relaxed text-forest-100/90">Ο 20ος αιώνας έφερε μεγάλες προκλήσεις. Κατά τη διάρκεια της Γερμανικής Κατοχής, τα πυκνά δάση της Κοκκινομηλιάς αποτέλεσαν ορμητήριο των ανταρτών του ΕΛΑΣ. Οι κάτοικοι πλήρωσαν βαρύ φόρο αίματος για τη βοήθεια και τη φιλοξενία που προσέφεραν στην Αντίσταση.</p>
+                    <p class="mt-4 leading-relaxed text-forest-100/90">Μεταπολεμικά, το χωριό γνώρισε μια περίοδο σημαντικής οικονομικής ακμής βασισμένη σε ένα μοναδικό προϊόν: το ρετσίνι. Η Κοκκινομηλιά αναδείχθηκε σε ένα από τα μεγαλύτερα «ρετσινοχώρια» της Ελλάδας. Οι άνδρες του χωριού, οι ξακουστοί ρετσινοχώρες, δούλευαν σκληρά στα δάση, τροφοδοτώντας την ελληνική βιομηχανία και κρατώντας την τοπική οικονομία ζωντανή.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOVERY -->
+        <section id="recovery" class="scroll-mt-24">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-500">Αναγέννηση</p>
+            <h2 class="max-w-3xl font-serif text-4xl font-semibold tracking-tight text-forest-800 text-balance md:text-5xl">Η Μεγάλη Δοκιμασία του 2021 και τα Σημεία Αναγεννήσεως</h2>
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-forest-700">Τον Αύγουστο του 2021, η Βόρεια Εύβοια έζησε μία από τις μεγαλύτερες περιβαλλοντικές καταστροφές στη σύγχρονη ιστορία της Ελλάδας. Η Κοκκινομηλιά βρέθηκε στο επίκεντρο της πύρινης λαίλαπας. Η φωτιά προκάλεσε σοβαρές ζημιές στις υποδομές, κατέστρεψε σπίτια και ισοπέδωσε το δάσος γύρω από το χωριό.</p>
+            <p class="mt-4 max-w-3xl text-lg leading-relaxed text-forest-700">Ωστόσο, τρία μεγάλα γεγονότα επιστημονικής, κοινωνικής και οικονομικής φύσεως σηματοδοτούν σήμερα την απόλυτη αναγέννηση του οικισμού:</p>
+
+            <div class="mt-8 grid gap-5 md:grid-cols-3">
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-forest-100 font-serif text-lg font-semibold text-forest-700">1</div>
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Ανοικοδόμηση του Ναού του Ταξιάρχη</h4>
+                    <p class="mt-3 leading-relaxed text-forest-700">Κατά τη διάρκεια της φωτιάς, η μεγάλη και κεντρική εκκλησία του χωριού, ο Ταξιάρχης, κάηκε ολοσχερώς, προκαλώντας βαθιά θλίψη. Σήμερα αποτελεί ένα σπουδαίο σύμβολο ελπίδας: μετά από την ευγενή και γενναιόδωρη προσφορά ενός μεγάλου και παγκοσμίως γνωστού Έλληνα εφοπλιστή, ο ναός ξαναχτίζεται και επισκευάζεται από την αρχή με δικά του έξοδα.</p>
+                </div>
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-forest-100 font-serif text-lg font-semibold text-forest-700">2</div>
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Νέο Περιβαλλοντικό Κέντρο (Παλιό Σχολείο)</h4>
+                    <p class="mt-3 leading-relaxed text-forest-700">Το παλιό, ιστορικό σχολείο του χωριού επισκευάστηκε ριζικά και ανακατασκευάστηκε πλήρως με τη χορηγία της Elpedison, μεταμορφούμενο σε ένα κτίριο υπερσύγχρονο και λειτουργικό. Με τα εγκαίνια προγραμματισμένα για τον Σεπτέμβριο του 2026, θα λειτουργήσει ως το επίσημο Περιβαλλοντικό Κέντρο Βόρειας Εύβοιας, κέντρο ερευνών, ενημέρωσης και φιλοξενίας για πανεπιστήμια από όλο τον κόσμο.</p>
+                </div>
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-forest-100 font-serif text-lg font-semibold text-forest-700">3</div>
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Το «Θαύμα» της Φύσης</h4>
+                    <p class="mt-3 leading-relaxed text-forest-700">Το τοπικό οικοσύστημα αναγεννάται με ρυθμούς που εκπλήσσουν ακόμη και τους πιο έμπειρους παρατηρητές.</p>
+                </div>
+            </div>
+
+            <h3 class="mt-14 font-serif text-2xl font-semibold text-forest-800 md:text-3xl">Ένα Ζωντανό Υπαίθριο Εργαστήριο: Η Μάχη της Χλωρίδας</h3>
+            <p class="mt-3 max-w-3xl text-lg leading-relaxed text-forest-700">Το δάσος της Κοκκινομηλιάς αποτελούσε μια μεταβατική ζώνη (οικότονο), όπου η μεσογειακή βλάστηση συναντούσε το ορεινό τοπίο. Αυτό το σπάνιο μωσαϊκό χλωρίδας αναγεννάται σήμερα με διαφορετικούς, συναρπαστικούς μηχανισμούς, μετατρέποντας την περιοχή σε ιδανικό πεδίο μελέτης για φοιτητές, δασολόγους και περιβαλλοντολόγους:</p>
+            <div class="mt-6 grid gap-4 md:grid-cols-3">
+                <div class="rounded-2xl bg-forest-50 p-5">
+                    <h4 class="font-semibold text-forest-700">Η Χαλέπιος Πεύκη</h4>
+                    <p class="mt-2 text-sm leading-relaxed text-forest-700">Διαθέτει πυροανθεκτικούς κώνους (κουκουνάρια) που άνοιξαν με τη θερμότητα της φωτιάς, γεμίζοντας τις πλαγιές με εκατομμύρια νέα μικρά πευκάκια.</p>
+                </div>
+                <div class="rounded-2xl bg-forest-50 p-5">
+                    <h4 class="font-semibold text-forest-700">Η Μαύρη Πεύκη &amp; τα Έλατα</h4>
+                    <p class="mt-2 text-sm leading-relaxed text-forest-700">Αυτοί οι ορεινοί γίγαντες κάλυπταν τις πιο ψηλές ζώνες. Καθώς δεν αναγεννώνται εύκολα μετά από φωτιά, το γεγονός ότι ήδη ξεπροβάλλουν ξανά οι πρώτοι μικροί μαύροι πεύκοι και διάσπαρτα έλατα δείχνει ότι το μικροκλίμα και το έδαφος παραμένουν εξαιρετικά ισχυρά.</p>
+                </div>
+                <div class="rounded-2xl bg-forest-50 p-5">
+                    <h4 class="font-semibold text-forest-700">Η Ορμητική Δρυς (Βελανιδιά)</h4>
+                    <p class="mt-2 text-sm leading-relaxed text-forest-700">Το πιο εντυπωσιακό φαινόμενο είναι η βελανιδιά, η οποία φυτρώνει πλέον παντού, σχεδόν «ανεξέλεγκτα», χάρη στην πρεμνοβλάστηση. Το βαθύ ριζικό της σύστημα έμεινε ζωντανό κάτω από το χώμα και πέταξε εύρωστα βλαστάρια με απίστευτη ταχύτητα.</p>
+                </div>
+            </div>
+            <div class="mt-6 rounded-2xl border-l-4 border-forest-500 bg-forest-50 p-6">
+                <h4 class="font-serif text-lg font-semibold text-forest-700">Γιατί αυτό καθηλώνει την Επιστημονική Κοινότητα;</h4>
+                <p class="mt-2 leading-relaxed text-forest-700">Οι επιστήμονες μελετούν σε πραγματικό χρόνο τη «Μάχη της Σκίασης»: η δρυς μεγαλώνει γρήγορα, δημιουργεί φυσική σκιά, συγκρατεί την υγρασία και προστατεύει τα πιο ευαίσθητα σπορόφυτα της μαύρης πεύκης και του ελάτου από τον ήλιο. Παράλληλα, η εξάπλωση της βελανιδιάς δημιουργεί ένα πιο μικτό και φυσικά θωρακισμένο δάσος, καθώς τα πλατύφυλλα στερούνται ρετσινιού και είναι πολύ πιο ανθεκτικά σε μελλοντικές πυρκαγιές.</p>
+            </div>
+        </section>
+
+        <!-- CHAPELS -->
+        <section id="chapels" class="scroll-mt-24">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-500">Όρος Ξηρόν</p>
+            <h2 class="max-w-3xl font-serif text-4xl font-semibold tracking-tight text-forest-800 text-balance md:text-5xl">Τα Ιστορικά Εξωκλήσια της Κοκκινομηλιάς</h2>
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-forest-700">Στο ορεινότερο χωριό της Βόρειας Εύβοιας, την Κοκκινομηλιά (χτισμένη σε υψόμετρο 600 μέτρων στο όρος Ξηρόν), τα εξωκλήσια δεν είναι απλώς θρησκευτικοί χώροι. Είναι ζωντανά σημεία αναφοράς, μάρτυρες της ιστορίας του τόπου και σύμβολα της αναγέννησης της τοπικής κοινότητας. Ανακαλύψτε τα τρία πιο σημαντικά εξωκλήσια της περιοχής, τις ιστορίες τους και τις διαδρομές που αξίζει να περπατήσετε.</p>
+
+            <!-- Prof. Ilias -->
+            <div class="mt-12 grid items-start gap-8 md:grid-cols-2">
+                <div class="order-2 md:order-1">
+                    <span class="inline-block rounded-full bg-forest-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-forest-700">01</span>
+                    <h3 class="mt-4 font-serif text-2xl font-semibold text-forest-800 md:text-3xl">Προφήτης Ηλίας: Το Σύμβολο Αναγέννησης και Ελπίδας</h3>
+                    <p class="mt-4 leading-relaxed text-forest-700">Χτισμένο σε ένα από τα πιο προνομιακά και γραφικά σημεία του χωριού, το ναΰδριο του Προφήτη Ηλία προσφέρει καθηλωτική πανοραμική θέα στο καταπράσινο —και σταδιακά αναγεννώμενο— τοπίο της Βόρειας Εύβοιας.</p>
+                    <h4 class="mt-6 font-semibold text-forest-700">Η Σημασία της Ανακαίνισης</h4>
+                    <p class="mt-2 leading-relaxed text-forest-700">Για την Κοκκινομηλιά, που επλήγη σκληρά από τις καταστροφικές πυρκαγιές του 2021, η πρόσφατη ανακαίνιση του Προφήτη Ηλία δεν ήταν μια απλή δομική συντήρηση. Αποτέλεσε έναν ισχυρό συμβολισμό ενότητας και επανεκκίνησης, με τη φροντίδα της Εκκλησίας, των τοπικών αρχών, αλλά κυρίως με την εθελοντική προσφορά και την αγάπη των κατοίκων και του Εκπολιτιστικού Συλλόγου.</p>
+                    <div class="mt-6 rounded-2xl bg-forest-50 p-5">
+                        <h4 class="font-semibold text-forest-700">Ο Εορτασμός στο Ξωκλήσι</h4>
+                        <ul class="mt-3 space-y-2 text-forest-700">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500"></span><span><strong>Παραμονή (19 Ιουλίου):</strong> Μέγας Πανηγυρικός Εσπερινός με αρτοκλασία και παραδοσιακά κεράσματα στο ξωκλήσι.</span></li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500"></span><span><strong>Ανήμερα (20 Ιουλίου):</strong> Πανηγυρική Θεία Λειτουργία.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="prilias.jpg" alt="Εξωκλήσι Προφήτης Ηλίας" class="order-1 aspect-[4/3] w-full rounded-2xl bg-forest-100 object-cover shadow-md md:order-2 md:sticky md:top-24">
+            </div>
+
+            <!-- Panigiri -->
+            <div class="mt-12 rounded-3xl bg-clay/10 p-6 md:p-10">
+                <h3 class="font-serif text-2xl font-semibold text-forest-800 md:text-3xl">Το Μεγάλο Πανηγύρι στην Πλατεία (20 Ιουλίου)</h3>
+                <p class="mt-4 max-w-3xl leading-relaxed text-forest-700">Το πανηγύρι του Προφήτη Ηλία είναι η μεγαλύτερη γιορτή του χρόνου για την Κοκκινομηλιά. Μετά τις λειτουργίες στο ξωκλήσι, η γιορτή μεταφέρεται στην κεντρική πλατεία του χωριού για το καθιερωμένο «Αντάμωμα».</p>
+                <p class="mt-3 max-w-3xl leading-relaxed text-forest-700">Πρόκειται για ένα αυθεντικό, παραδοσιακό δημοτικό πανηγύρι με ζωντανή μουσική, χορό μέχρι το πρωί και νόστιμες ντόπιες γεύσεις, που συγκεντρώνει πλήθος κόσμου από όλη την Εύβοια.</p>
+                <div class="mt-6 grid gap-4 sm:grid-cols-3">
+                    <img src="panigiri1.jpg" alt="Πανηγύρι στην Πλατεία 1" class="aspect-[4/3] w-full rounded-2xl bg-forest-100 object-cover shadow-sm">
+                    <img src="panigiri2.jpg" alt="Πανηγύρι στην Πλατεία 2" class="aspect-[4/3] w-full rounded-2xl bg-forest-100 object-cover shadow-sm">
+                    <img src="panigiri-fetos.jpg" alt="Πανηγύρι στην Πλατεία 3" class="aspect-[4/3] w-full rounded-2xl bg-forest-100 object-cover shadow-sm">
+                </div>
+            </div>
+
+            <!-- Analipsi -->
+            <div class="mt-12 grid items-start gap-8 md:grid-cols-2">
+                <img src="analip.jpg" alt="Εξωκλήσι Ανάληψης" class="aspect-[4/3] w-full rounded-2xl bg-forest-100 object-cover shadow-md md:sticky md:top-24">
+                <div>
+                    <span class="inline-block rounded-full bg-forest-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-forest-700">02</span>
+                    <h3 class="mt-4 font-serif text-2xl font-semibold text-forest-800 md:text-3xl">Ιερός Ναός Αναλήψεως: Στο Ψηλότερο Μπαλκόνι του Όρους Ξηρού</h3>
+                    <p class="mt-4 leading-relaxed text-forest-700">Σε ένα από τα πιο ορεινά και επιβλητικά σημεία γύρω από το χωριό, το εξωκλήσι της Αναλήψεως στέκεται περιτριγυρισμένο από τις δασωμένες πλαγιές του όρους Ξηρού.</p>
+                    <h4 class="mt-6 font-semibold text-forest-700">Σταθμός για Πεζοπόρους &amp; Φυσιολάτρες</h4>
+                    <p class="mt-2 leading-relaxed text-forest-700">Η διαδρομή προς την Ανάληψη αποτελεί μία από τις ωραιότερες πεζοπορικές διαδρομές της περιοχής.</p>
+                    <ul class="mt-3 space-y-2 text-forest-700">
+                        <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500"></span><span><strong>Ημερομηνία Εορτασμού:</strong> Κινητή εορτή (39 ημέρες μετά το Πάσχα, πάντα Πέμπτη).</span></li>
+                        <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500"></span><span><strong>Το Έθιμο:</strong> Μετά τη Θεία Λειτουργία και την αρτοκλασία, οι πιστοί συγκεντρώνονται στο προαύλιο ή στην πλατεία για το καθιερωμένο τοπικό κέρασμα.</span></li>
+                    </ul>
+                    <div class="mt-6 rounded-2xl border-l-4 border-forest-500 bg-forest-50 p-5">
+                        <p class="text-sm leading-relaxed text-forest-700"><strong>Extra Tip Πεζοπορίας:</strong> Επειδή η Ανάληψη πέφτει πάντα την Άνοιξη (Μάιο ή Ιούνιο), η επίσκεψη συνδυάζεται ιδανικά με την ανθισμένη φύση του βουνού και τις ήπιες θερμοκρασίες.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agia Paraskevi -->
+            <div class="mt-12 grid items-start gap-8 md:grid-cols-2">
+                <div class="order-2 md:order-1">
+                    <span class="inline-block rounded-full bg-forest-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-forest-700">03</span>
+                    <h3 class="mt-4 font-serif text-2xl font-semibold text-forest-800 md:text-3xl">Αγία Παρασκευή: Ο Ζωντανός Μάρτυρας του «Παλιοχωρίου»</h3>
+                    <p class="mt-4 leading-relaxed text-forest-700">Το εξωκλήσι της Αγίας Παρασκευής φέρει στις πέτρες του τη βαθιά ιστορική μνήμη και τις ρίζες της Κοκκινομηλιάς.</p>
+                    <h4 class="mt-6 font-semibold text-forest-700">Η Ιστορία του Αρχικού Οικισμού</h4>
+                    <p class="mt-2 leading-relaxed text-forest-700">Σύμφωνα με την τοπική παράδοση, οι πρόγονοι των σημερινών κατοίκων ζούσαν διασκορπισμένοι σε μικρούς οικισμούς. Ο παλαιότερος από αυτούς βρισκόταν στη θέση «Παλιοχώρι», ακριβώς δίπλα στο σημείο όπου βρίσκεται σήμερα το εκκλησάκι.</p>
+                    <p class="mt-3 leading-relaxed text-forest-700">Κατά την Τουρκοκρατία, ο τοπικός Αγάς υποχρέωσε τους κατοίκους από το Παλιοχώρι και τη Μακροφτυλιά να μετοικήσουν στη σημερινή θέση της Κοκκινομηλιάς για να ελέγχει πιο εύκολα τη φορολογία. Έτσι, η Αγία Παρασκευή παραμένει το ιστορικό ορόσημο της αρχικής εστίας του χωριού.</p>
+                    <ul class="mt-3 space-y-2 text-forest-700">
+                        <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500"></span><span><strong>Εορτασμός:</strong> 26 Ιουλίου (Αγίας Οσιομάρτυρος Παρασκευής).</span></li>
+                        <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500"></span><span><strong>Τοπίο:</strong> Φωλιασμένο μέσα στην ορεινή φύση, προσφέρει απόλυτη ηρεμία και είναι προσβάσιμο μέσω μιας πανέμορφης σύντομης πεζοπορικής διαδρομής.</span></li>
+                    </ul>
+                </div>
+                <img src="agpar.jpg" alt="Εξωκλήσι Αγίας Παρασκευής" class="order-1 aspect-[4/3] w-full rounded-2xl bg-forest-100 object-cover shadow-md md:order-2 md:sticky md:top-24">
+            </div>
+
+            <!-- Info table -->
+            <h3 class="mt-14 font-serif text-2xl font-semibold text-forest-800 md:text-3xl">Χρήσιμες Πληροφορίες για τον Επισκέπτη</h3>
+            <div class="mt-6 overflow-hidden rounded-2xl border border-forest-100 shadow-sm">
+                <table class="w-full border-collapse text-left text-sm">
+                    <thead>
+                        <tr class="bg-forest-700 text-white">
+                            <th class="px-5 py-4 font-semibold">Εξωκλήσι</th>
+                            <th class="px-5 py-4 font-semibold">Υψόμετρο / Τοποθεσία</th>
+                            <th class="px-5 py-4 font-semibold">Ημερομηνία Γιορτής</th>
+                            <th class="px-5 py-4 font-semibold">Highlights</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-forest-100 bg-white text-forest-700">
+                        <tr class="hover:bg-forest-50">
+                            <td class="px-5 py-4 font-semibold text-forest-800">Προφήτης Ηλίας</td>
+                            <td class="px-5 py-4">Οικισμός Κοκκινομηλιάς</td>
+                            <td class="px-5 py-4">20 Ιουλίου</td>
+                            <td class="px-5 py-4">Πανοραμική θέα, Μεγάλο Πανηγύρι</td>
+                        </tr>
+                        <tr class="bg-forest-50/50 hover:bg-forest-50">
+                            <td class="px-5 py-4 font-semibold text-forest-800">Ανάληψη</td>
+                            <td class="px-5 py-4">Ψηλότερες πλαγιές όρους Ξηρού</td>
+                            <td class="px-5 py-4">Κινητή (39 μέρες μετά το Πάσχα)</td>
+                            <td class="px-5 py-4">Πεζοπορία, Ανοιξιάτικο τοπίο</td>
+                        </tr>
+                        <tr class="hover:bg-forest-50">
+                            <td class="px-5 py-4 font-semibold text-forest-800">Αγία Παρασκευή</td>
+                            <td class="px-5 py-4">Θέση «Παλιοχώρι»</td>
+                            <td class="px-5 py-4">26 Ιουλίου</td>
+                            <td class="px-5 py-4">Ιστορικές ρίζες χωριού, Ήσυχο φυσικό περιβάλλον</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SIGHTS -->
+        <section id="sights" class="scroll-mt-24">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-500">Εξερεύνηση</p>
+            <h2 class="max-w-3xl font-serif text-4xl font-semibold tracking-tight text-forest-800 text-balance md:text-5xl">Αξιοθέατα στην Ευρύτερη Περιοχή</h2>
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-forest-700">Η Κοκκινομηλιά αποτελεί την ιδανική αφετηρία για να ανακαλύψετε τα σπουδαιότερα αξιοθέατα της Βόρειας Εύβοιας, από τα ορεινά μοναστήρια μέχρι τα «ελληνικά Σεϋχέλλες».</p>
+
+            <div class="mt-8 grid gap-5 md:grid-cols-2">
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Το Απολιθωμένο Δάσος και το Μουσείο της Κερασιάς</h4>
+                    <ul class="mt-4 space-y-3 text-forest-700">
+                        <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500"></span><span><strong>Το Απολιθωμένο Δάσος:</strong> Πριν από περίπου 10–20 εκατομμύρια χρόνια, η έντονη ηφαιστειακή δραστηριότητα κάλυψε το πλούσιο υποτροπικό δάσος της περιοχής με στάχτη, με αποτέλεσμα την τέλεια απολίθωση των κορμών.</span></li>
+                        <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500"></span><span><strong>Μουσείο Απολιθωμένων Θηλαστικών Κερασιάς:</strong> Στεγάζει τα ευρήματα των τοπικών ανασκαφών. Εκεί ο επισκέπτης θα δει τους εντυπωσιακούς, προϊστορικούς προγόνους των ελεφάντων: Δεινοθήρια, μαχαιρόδοντες, χαλικοθήρια, προϊστορικούς ρινόκερους και χιπαριόν.</span></li>
+                    </ul>
+                </div>
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h4 class="font-serif text-xl font-semibold text-forest-700">Οι Καταρράκτες του Δρυμώνα και η Μονή Οσίου Δαυίδ</h4>
+                    <p class="mt-4 leading-relaxed text-forest-700">Οι καταρράκτες βρίσκονται σε υψόμετρο 620 μέτρων. Το νερό του ποταμού Σηπιά πέφτει από ύψος 15 μέτρων, δημιουργώντας μια κρυστάλλινη λίμνη περιβαλλόμενη από ένα δίκτυο διαμορφωμένων μονοπατιών με ξύλινα γεφυράκια. Πολύ κοντά βρίσκεται και η ιστορική Μονή του Οσίου Δαυίδ, ιδανική στάση για πνευματική ηρεμία.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
+                <img src="lihadonisia.jpg" alt="Λιχαδονήσια" class="aspect-square w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="oreoi.jpeg" alt="Ταύρος των Ωρεών" class="aspect-square w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="aidipsos.jpg" alt="Λουτρά Αιδηψού" class="aspect-square w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="kataraktes-drimona.jpg" alt="Καταρράκτες Δρυμώνα" class="aspect-square w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="moniosioudavid.jpg" alt="Μονή Οσίου Δαυίδ" class="aspect-square w-full rounded-2xl bg-forest-100 object-cover shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            </div>
+        </section>
+
+        <!-- BEACHES -->
+        <section id="beaches" class="scroll-mt-24">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-500">Θάλασσα</p>
+            <h2 class="max-w-3xl font-serif text-4xl font-semibold tracking-tight text-forest-800 text-balance md:text-5xl">Ο Απόλυτος Οδηγός Παραλιών: Από τον Ευβοϊκό στο Αιγαίο</h2>
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-forest-700">Η διαδρομή που ξεκινά από την Κοκκινομηλιά προσφέρει στον επισκέπτη το μοναδικό προνόμιο να επιλέξει ανάμεσα στην απόλυτη απανεμιά των κόλπων και την άγρια ομορφιά του ανοιχτού πελάγους.</p>
+
+            <div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
+                <figure class="group relative overflow-hidden rounded-2xl shadow-sm">
+                    <img src="agiokampos.jpeg" alt="Αγιόκαμπος" class="aspect-[4/3] w-full bg-forest-100 object-cover transition duration-500 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-sm font-semibold text-white">Αγιόκαμπος</figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl shadow-sm">
+                    <img src="psaropouli.jpeg" alt="Ψαροπούλι" class="aspect-[4/3] w-full bg-forest-100 object-cover transition duration-500 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-sm font-semibold text-white">Ψαροπούλι</figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl shadow-sm">
+                    <img src="elinika-agios-nikolaos.jpg" alt="Ελληνικά Άγιος Νικόλαος" class="aspect-[4/3] w-full bg-forest-100 object-cover transition duration-500 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-sm font-semibold text-white">Ελληνικά Άγιος Νικόλαος</figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl shadow-sm">
+                    <img src="tsokaiti.jpg" alt="Τσοκαΐτη" class="aspect-[4/3] w-full bg-forest-100 object-cover transition duration-500 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-sm font-semibold text-white">Τσοκαΐτη</figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl shadow-sm">
+                    <img src="rovies.jpg" alt="Ροβιές" class="aspect-[4/3] w-full bg-forest-100 object-cover transition duration-500 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-sm font-semibold text-white">Ροβιές</figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl shadow-sm">
+                    <img src="nisiotisa.jpeg" alt="Νησιώτισσα" class="aspect-[4/3] w-full bg-forest-100 object-cover transition duration-500 group-hover:scale-105">
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-sm font-semibold text-white">Νησιώτισσα</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- RECIPES -->
+        <section id="recipes" class="scroll-mt-24">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-500">Γεύσεις</p>
+            <h2 class="max-w-3xl font-serif text-4xl font-semibold tracking-tight text-forest-800 text-balance md:text-5xl">Συνταγές του Χωριού μας</h2>
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-forest-700">Στην Κοκκινομηλιά ξέρουμε καλά από δύο πράγματα: από πανέμορφα δασικά τοπία και από καλό, αυθεντικό φαγητό! Οι συνταγές του χωριού μας δεν θέλουν μεζούρες και γραμμάρια ακριβείας· θέλουν μεράκι, αγνά υλικά και αυτή την κλασική «γιαγιαδίστικη» σοφία.</p>
+
+            <div class="mt-8 space-y-6">
+                <div class="grid items-center gap-6 rounded-3xl border border-clay/20 bg-white p-6 shadow-sm md:grid-cols-[1fr_1.4fr]">
+                    <img src="moust.jpg" alt="Μουσταλευριά" class="aspect-[4/3] w-full rounded-2xl bg-forest-100 object-cover shadow-sm">
+                    <div class="border-l-4 border-clay pl-5">
+                        <h4 class="font-serif text-2xl font-semibold text-clay">Μουσταλευριά</h4>
+                        <p class="mt-1 text-sm italic text-forest-500">Το Παραδοσιακό «Energy Bowl» της Κοκκινομηλιάς</p>
+                        <p class="mt-4 leading-relaxed text-forest-700"><strong>Τι θα χρειαστείτε:</strong> 4 ποτήρια μούστο, 1 ποτήρι αλεύρι, Κανέλα, Χοντροκομμένα καρύδια.</p>
+                        <p class="mt-2 leading-relaxed text-forest-700"><strong>Εκτέλεση:</strong> Διαλύουμε το αλεύρι στον μούστο. Βράζουμε ανακατεύοντας συνεχώς μέχρι να πήξει. Σερβίρουμε με μπόλικο καρύδι και κανέλα!</p>
+                    </div>
+                </div>
+
+                <div class="grid items-center gap-6 rounded-3xl border border-clay/20 bg-white p-6 shadow-sm md:grid-cols-[1.4fr_1fr]">
+                    <div class="order-2 border-l-4 border-clay pl-5 md:order-1">
+                        <h4 class="font-serif text-2xl font-semibold text-clay">Αυγοτύρι</h4>
+                        <p class="mt-1 text-sm italic text-forest-500">Ο Βασιλιάς του Μεζέ στο Καφενείο</p>
+                        <p class="mt-4 leading-relaxed text-forest-700">Έσκασαν μουσαφιραίοι ξαφνικά και δεν ξέρετε τι να τρατάρετε; Γρήγορο, πεντανόστιμο και ο απόλυτος συνοδός για τις συζητήσεις στην πλατεία.</p>
+                        <p class="mt-3 leading-relaxed text-forest-700"><strong>Τι θα χρειαστείτε:</strong> 1/2 κιλό τυρί φρέσκο τσαντίλας, 5 αυγά χωριάτικα, Λίγο αλάτι και πιπέρι.</p>
+                        <p class="mt-2 leading-relaxed text-forest-700"><strong>Εκτέλεση:</strong> Τηγανίζουμε ελαφρώς το αλευρωμένο τυρί. Χτυπάμε τα αυγά και τα περιχύνουμε στο τηγάνι. Τηγανίζουμε σαν ομελέτα. Σερβίρουμε με ντόπιο κρασάκι!</p>
+                    </div>
+                    <img src="aug.jpg" alt="Αυγοτύρι" class="order-1 aspect-[4/3] w-full rounded-2xl bg-forest-100 object-cover shadow-sm md:order-2">
+                </div>
+
+                <div class="rounded-3xl border border-clay/20 bg-white p-6 shadow-sm md:p-8">
+                    <div class="border-l-4 border-clay pl-5">
+                        <h4 class="font-serif text-2xl font-semibold text-clay">Ρεβύθια με Μανέστρα</h4>
+                        <p class="mt-1 text-sm italic text-forest-500">Η Κυριακάτικη Θαλπωρή</p>
+                        <p class="mt-4 max-w-3xl leading-relaxed text-forest-700">Ένα πιάτο γεμάτο θαλπωρή, ιδανικό για τις κρύες μέρες στην Κοκκινομηλιά.</p>
+                        <p class="mt-3 max-w-3xl leading-relaxed text-forest-700"><strong>Τι θα χρειαστείτε:</strong> 500 gr ρεβύθια, 3 κρεμμύδια, 1 φλιτζάνι λάδι, 1 κ.σ. πελτέ, 150 gr κριθαράκι (μανέστρα), αλάτι &amp; πιπέρι.</p>
+                        <p class="mt-2 max-w-3xl leading-relaxed text-forest-700"><strong>Εκτέλεση:</strong> Μουλιάζουμε τα ρεβύθια αποβραδίς. Τα βράζουμε με το κρεμμύδι μέχρι να μαλακώσουν. Προσθέτουμε λάδι, πελτέ και μπαχαρικά. Στο τέλος ρίχνουμε το κριθαράκι και το αλάτι και φρεσκοτριμμένο πιπέρι. Αφήνουμε το κριθαράκι να «πιει» τα ζουμιά του.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="scroll-mt-24">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-500">Μείνετε σε επαφή</p>
+            <h2 class="font-serif text-4xl font-semibold tracking-tight text-forest-800 text-balance md:text-5xl">Επικοινωνία</h2>
+            <div class="mt-8 grid gap-5 md:grid-cols-3">
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h3 class="font-serif text-lg font-semibold text-forest-700">Πρόεδρος Κοινότητας</h3>
+                    <p class="mt-3 font-semibold text-forest-800">Δημήτρης Δήμου</p>
+                    <a href="tel:6945165268" class="mt-1 inline-flex items-center gap-2 font-medium text-forest-600 hover:text-forest-800">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                        6945165268
+                    </a>
+                </div>
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h3 class="font-serif text-lg font-semibold text-forest-700">Πρόεδρος Πολιτιστικού Συλλόγου</h3>
+                    <p class="mt-3 font-semibold text-forest-800">Άγγελος Γερογιώργης</p>
+                    <a href="tel:6938213305" class="mt-1 inline-flex items-center gap-2 font-medium text-forest-600 hover:text-forest-800">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                        6938213305
+                    </a>
+                </div>
+                <div class="rounded-2xl border border-forest-100 bg-white p-6 shadow-sm">
+                    <h3 class="font-serif text-lg font-semibold text-forest-700">Social Media</h3>
+                    <div class="mt-3 flex flex-col gap-2">
+                        <a href="[LINK_TO_YOUR_FACEBOOK_PAGE]" target="_blank" class="inline-flex items-center gap-2 font-medium text-forest-600 hover:text-forest-800">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                            Facebook Σελίδα
+                        </a>
+                        <a href="[LINK_TO_YOUR_INSTAGRAM_PROFILE]" target="_blank" class="inline-flex items-center gap-2 font-medium text-forest-600 hover:text-forest-800">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            Instagram Προφίλ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAP -->
+        <section id="location" class="scroll-mt-24">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest-500">Τοποθεσία</p>
+            <h2 class="font-serif text-4xl font-semibold tracking-tight text-forest-800 text-balance md:text-5xl">Πώς να έρθετε</h2>
+            <div class="mt-8 overflow-hidden rounded-3xl border border-forest-100 shadow-sm">
+                <iframe
+                    src="https://maps.google.com/maps?q=%CE%9A%CE%BF%CE%BA%CE%BA%CE%B9%CE%BD%CE%BF%CE%BC%CE%B7%CE%BB%CE%B9%CE%AC,%20%CE%95%CF%8D%CE%B2%CE%BF%CE%B9%CE%B1&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                    title="Χάρτης Κοκκινομηλιάς"
+                    loading="lazy"
+                    class="h-[450px] w-full border-0"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-forest-900 text-forest-100">
+        <div class="mx-auto max-w-6xl px-6 py-14">
+            <div class="flex flex-col items-center gap-4 text-center">
+                <p class="font-serif text-2xl font-semibold text-white">Κοκκινομηλιά Βόρειας Εύβοιας</p>
+                <p class="max-w-xl text-sm leading-relaxed text-forest-300">Ένα ζωντανό παράδειγμα αναγέννησης και φιλοξενίας, στις πλαγιές του όρους Ξηρόν.</p>
+            </div>
+            <div class="mt-10 border-t border-forest-700 pt-6 text-center text-sm text-forest-400">
+                <p>© 2026 · Ιστοσελίδα της Κοκκινομηλιάς</p>
             </div>
         </div>
-
-    </div>
-
-    <footer>
-        <p>© 2026 - Ιστοσελίδα της Κοκκινομηλιάς. Ένα ζωντανό παράδειγμα αναγέννησης και φιλοξενίας.</p>
     </footer>
 
 </body>
